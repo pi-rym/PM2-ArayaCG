@@ -1,0 +1,82 @@
+*{
+    width: 100%;
+}
+ion-icon {
+    font-size: 2em;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 20%;
+}
+.paginas {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.paginas a {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+
+}
+.paginas a:hover {
+    transition: transform 0.6s ease;
+    transform: scale(1.2);
+}
+.login {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    width: 10rem;
+    margin: 1em;
+    cursor: pointer;
+}
+.login:hover{
+    background-color: black;
+    color: white;
+    transition: transform 0.6s ease;
+    transform: scale(1.1);
+}
+
+.nav{
+    background-color: #0f4c5c;
+    color: white;
+    display: flex;
+    font-size: 1.2em;
+    height: 6vh;
+    align-items: center;
+    width: 100%;
+}
+.nav a{
+    text-decoration: none;
+    color: white;
+}
+
+.filtro {
+    display: flex; /* Utilizamos flexbox para alinear los elementos horizontalmente */
+    align-items: center; /* Centramos verticalmente los elementos */
+}
+
+.filtro input[type="text"] {
+    margin-right: 10px; /* Espacio entre los campos de entrada */
+    padding: 8px; /* Ajusta el relleno según sea necesario */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.filtro button {
+    padding: 8px 16px; /* Ajusta el relleno según sea necesario */
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/*Colores
+5f0f40
+9a031e
+fb8b24
+e36414
+0f4c5c*/

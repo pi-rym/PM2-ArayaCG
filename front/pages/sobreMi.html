@@ -3,32 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Mi</title>
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="/front/styles/reset.css">
+    <link rel="stylesheet" href="/front/styles/style.css">
+    <link rel="icon" href="/front/assets/ticket-outline.svg">
+    <title>Cine Ticket | Sobre Mi</title>
 </head>
 <body>
     <header>
         <div class="nav">
-            <a href="">Inicio</a>
-            <a href="">Películas</a>
-            <a href="">Historia del Cine</a>
-            <a href="">Sobre Mi</a>
-            <button>Login</button>
-        </div>
+          <div class="logo">
+            <ion-icon name="ticket-outline" ></ion-icon>
+            <p>Cine Ticket</p>
+          </div>
+          <div class="paginas">
+            <a href="/front/index.html">Inicio</a> | | 
+            <a href="/front/pages/peliculas.html">Películas</a> | 
+            <a href="/front/pages/historiaCine.html">Historia del Cine</a> | 
+            <a href="#">Sobre Mi</a>
+          </div>
+            <button class="login"><ion-icon name="person-outline"></ion-icon></button>
+          </div>
     </header>
-
     <main>
 
     </main>
 
     <footer>
         <p>Página creada con fines educativos, espero que la disfrutes!</p>
-        <a href="">Inicio</a>
-        <a href="">Instagram</a>
-        <a href="">Twitch</a>
-        <a href="">GitHub</a>
+        <a href="#"><ion-icon name="home-outline"></ion-icon></a>
+        <a href="https://www.instagram.com/yayiii_64/"><ion-icon name="logo-instagram"></ion-icon></a>
+        <a href="https://www.twitch.tv/knutt64"><ion-icon name="logo-twitch"></ion-icon></a>
+        <a href="https://github.com/ArayaCG"><ion-icon name="logo-github"></ion-icon></a>
     </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     
 </body>
 </html>
