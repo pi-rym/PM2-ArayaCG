@@ -1,8 +1,9 @@
 class Pelicula {
-    constructor(title, year, director, genre, rate, poster) {
+    constructor(title, year, director, duration, genre, rate, poster) {
         this.title = title;
         this.year = year;
         this.director = director;
+        this.duration = duration;
         this.genre = genre;
         this.rate = rate;
         this.poster = poster;
@@ -15,98 +16,80 @@ class Repository {
     }
 
     getAllFilms() {
+        //Devuelve todas el array de películas
         return this.films;
     }
 
-    createFilm(title, year, director, genre, rate, poster) {
-        let film = new Pelicula(title, year, director, genre, rate, poster);
-        this.films.push(film);
+    createFilm(title, year, director, duration, genre, rate, poster) {
+        // Crea una instancia de Pelicula y la agrega al array de películas en el repositorio
+        this.films.push(new Pelicula(title, year, director, duration, genre, rate, poster));
     }
 }
 
+// Se crea el repositorio y se llenan las películas del tempData
 const repository = new Repository();
-tempData.forEach((film) => {
-    repository.createFilm(film.title, film.year, film.director, film.genre, film.rate, film.poster);
+tempData.forEach(({ title, year, director, duration, genre, rate, poster }) => {
+    repository.createFilm(title, year, director, duration, genre, rate, poster);
 });
 
-
-function crearTarjeta(film) {
-    const { title, poster } = film;
-    const elemTitle = document.createElement("h2");
-    elemTitle.innerHTML = title;
-
-    const elemPoster = document.createElement("img");
-    elemPoster.src = poster;
-
-    const filmCard = document.createElement("div");
-    filmCard.classList.add("card");
-    filmCard.appendChild(elemPoster);
-    filmCard.appendChild(elemTitle);
-
-    filmCard.addEventListener('click', () => {
-        mostrarDetalles(film); 
-    });
-
-    return filmCard;
-}
-
+// Despliega los detalles de una película cuando se hace clic en su tarjeta correspondiente
 function mostrarDetalles(film) {
     const detallesContainer = document.getElementById("detallesPelicula");
     detallesContainer.innerHTML = ""; 
 
-    const { title, year, director, genre, rate, poster } = film;
+    const { title, year, director, duration, genre, rate, poster } = film;
 
-    const elemTitle = document.createElement("h2");
-    elemTitle.innerHTML = title;
+    // Construye el HTML de los detalles de la película
+    const detalleHTML = `
+        <div class="detalleCard">
+            <img src="${poster}">
+            <div class="detalleInfo">
+                <h2>${title}</h2>
+                <h3>Año: ${year}</h3>
+                <h3>Director: ${director}</h3>
+                <h3>Duración: ${duration}</h3>
+                <h3>Género: ${genre}</h3>
+                <h3>Puntuación: ${rate}</h3>
+            </div>
+        </div>
+    `;
 
-    const elemYear = document.createElement("h3");
-    elemYear.innerHTML = `Año: ${year}`;
-
-    const elemDirector = document.createElement("h3");
-    elemDirector.innerHTML = `Director: ${director}`;
-
-    const elemGenre = document.createElement("h3");
-    elemGenre.innerHTML = `Género: ${genre}`;
-
-    const elemRate = document.createElement("h3");
-    elemRate.innerHTML = `Puntuación: ${rate}`;
-
-    const elemPoster = document.createElement("img");
-    elemPoster.src = poster;
-
-    const filmDetails = document.createElement("div");
-    filmDetails.classList.add("detalleCard");
-    filmDetails.appendChild(elemPoster);
-
-    const detalleInfo = document.createElement("div");
-    detalleInfo.classList.add("detalleInfo");
-    detalleInfo.appendChild(elemTitle);
-    detalleInfo.appendChild(elemYear);
-    detalleInfo.appendChild(elemDirector);
-    detalleInfo.appendChild(elemGenre);
-    detalleInfo.appendChild(elemRate);
-
-    filmDetails.appendChild(detalleInfo);
-
-    detallesContainer.appendChild(filmDetails);
+    // Rellena el contenedor de detalles con el HTML generado
+    detallesContainer.innerHTML = detalleHTML;
 }
 
-// En tu función instanciarContendor, asegúrate de tener un contenedor para los detalles:
+// Crea una tarjeta para una película dada
+function crearTarjeta(film) {
+    const { title, poster } = film;
+
+    // Crea un elemento de tarjeta y lo configura con el título y el póster de la película
+    const filmCard = document.createElement("div");
+    filmCard.classList.add("card");
+    filmCard.innerHTML = `
+        <img src="${poster}">
+        <h2>${title}</h2>
+    `;
+
+    // Agrega un controlador de eventos para mostrar los detalles de la película al hacer clic en la tarjeta
+    filmCard.addEventListener('click', () => mostrarDetalles(film));
+
+    return filmCard;
+}
+
+// Busca el contenedor de tarjetas de películas y crea e inserta tarjetas para cada película en el repositorio
 function instanciarContendor() {
     const contenedorTarjetas = document.getElementById("contenedorPeli");
-
     const films = repository.getAllFilms();
 
-    const movies = films.map((movie) => crearTarjeta(movie));
-    console.log(movies);
+    // Crea tarjetas para todas las películas en el repositorio y las inserta en el contenedor de tarjetas
+    const movies = films.map(crearTarjeta);
+    movies.forEach((movie) => contenedorTarjetas.appendChild(movie));
 
-    movies.forEach((coso) => {
-        contenedorTarjetas.appendChild(coso);
-        console.log(coso);
-    });
+    // Muestra los detalles de la primera película en el repositorio (si existe)
     if (films.length > 0) {
         mostrarDetalles(films[0]);
     }
 }
 
+// Inicializa la aplicación al cargar la página
 instanciarContendor();
