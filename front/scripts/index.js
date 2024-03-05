@@ -28,8 +28,20 @@ class Repository {
 
 // Se crea el repositorio y se llenan las películas del tempData
 const repository = new Repository();
-tempData.forEach(({ title, year, director, duration, genre, rate, poster }) => {
-    repository.createFilm(title, year, director, duration, genre, rate, poster);
+
+//función antes del JQuery
+//tempData.forEach(({ title, year, director, duration, genre, rate, poster }) => {
+//    repository.createFilm(title, year, director, duration, genre, rate, poster);
+//});
+
+//JQuery
+//se llama a la API y se llena el repositorio de las peliculas de la API
+$.get('https://students-api.2.us-1.fl0.io/movies', (data) => {
+    data.forEach(({ title, year, director, duration, genre, rate, poster }) => {
+        repository.createFilm(title, year, director, duration, genre, rate, poster);
+    });
+    // Después de crear las películas, instanciar el contenedor
+    instanciarContendor();
 });
 
 // Despliega los detalles de una película cuando se hace clic en su tarjeta correspondiente
@@ -91,5 +103,3 @@ function instanciarContendor() {
     }
 }
 
-// Inicializa la aplicación al cargar la página
-instanciarContendor();
