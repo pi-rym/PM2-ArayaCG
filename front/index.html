@@ -3,9 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/ticket-outline.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="icon" href="assets/ticket-outline.svg">
 
     <title>Cine Ticket</title>
   </head>
@@ -14,7 +17,7 @@
       <div class="nav">
         <div class="logo">
           <ion-icon name="ticket-outline" ></ion-icon>
-          <p>Cine Ticket</p>
+          
         </div>
         <div class="paginas">
           <a href="#">Inicio</a> | 
@@ -26,9 +29,14 @@
         </div>
   </header>
   <main>
-      <h1><ion-icon name="ticket-outline"></ion-icon>Cine Ticket</h1>
-      <h2>Tu Pasaporte a la Magia del Cine</h2>
-      <div class="banner">
+    <div class="isologo">
+      <div class="contenido">
+          <h1 class="sansita-black titulo"><ion-icon name="ticket-outline"></ion-icon>Cine Ticket</h1>
+          <h2 class="sansita-regular-italic subtitulo">Tu Pasaporte a la Magia del Cine</h2>
+      </div>
+    </div>
+
+      <div id="detallesPelicula">
        
       </div>
       <div class="filtro">
@@ -38,16 +46,18 @@
           <input type="text" placeholder="Género">
           <button>Buscar</button>
       </div>
-      <div class="contenedorPeli">
+      <div id="contenedorPeli">
           
       </div>
   </main>
   <footer>
-      <p>Página creada con fines educativos, espero que la disfrutes!</p>
-      <a href="#"><ion-icon name="home-outline"></ion-icon></a>
-      <a href="https://www.instagram.com/yayiii_64/"><ion-icon name="logo-instagram"></ion-icon></a>
-      <a href="https://www.twitch.tv/knutt64"><ion-icon name="logo-twitch"></ion-icon></a>
-      <a href="https://github.com/ArayaCG"><ion-icon name="logo-github"></ion-icon></a>
+      <p class="sansita-regular-italic">Página creada con fines educativos, espero que la disfrutes!</p>
+      <div class="redes">
+        <a href="#"><ion-icon name="home-outline"></ion-icon></a>
+        <a href="https://www.instagram.com/yayiii_64/"><ion-icon name="logo-instagram"></ion-icon></a>
+        <a href="https://www.twitch.tv/knutt64"><ion-icon name="logo-twitch"></ion-icon></a>
+        <a href="https://github.com/ArayaCG"><ion-icon name="logo-github"></ion-icon></a>
+      </div>
   </footer>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

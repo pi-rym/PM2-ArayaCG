@@ -1,6 +1,22 @@
 *{
     width: 100%;
+   
 }
+body{
+    font-family: 'Sansita', sans-serif;
+}
+  .sansita-black {
+    font-family: "Sansita", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .sansita-regular-italic {
+    font-family: "Sansita", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
 ion-icon {
     font-size: 2em;
 }
@@ -46,7 +62,7 @@ ion-icon {
     color: white;
     display: flex;
     font-size: 1.2em;
-    height: 6vh;
+    height: 3em;
     align-items: center;
     width: 100%;
 }
@@ -55,24 +71,178 @@ ion-icon {
     color: white;
 }
 
+.isologo {
+    background-color: #9a031e;
+    color: #fb8b24;
+    display: flex;
+    justify-content: center; 
+    height: 9em;
+    margin-bottom: 20px;
+}               
+
+.contenido {
+    padding: 1em; 
+    max-width: 100%; 
+    text-align: center;
+}
+.titulo{
+    font-size: 3em;
+    width: 7em;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+.titulo ion-icon{
+    width: 0.7em;
+    display: inline-flex;
+    
+}
+.subtitulo{
+    text-align: right;
+    font-size: 1.6em;
+    
+}
+.detalleCard {
+    width: 80%; 
+    margin: 0 auto; 
+    background-color: #fb8b24; 
+    border: 1px solid #9a031e; 
+    border-radius: 10px; 
+    padding: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    display: flex; 
+    align-items: center; 
+
+}
+
+.detalleCard img {
+    max-width: 40%; 
+    border-radius: 10px; 
+    margin-right: 20px;
+    width: 30em; 
+    height: 30em;
+}
+
+.detalleCard .detalleInfo {
+    display: flex; 
+    flex-direction: column; 
+}
+
+
+.detalleCard h2 {
+    font-size: 24px; 
+    margin-bottom: 10px; 
+}
+
+.detalleCard h3 {
+    font-size: 18px; 
+}
+#contenedorPeli{
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    width: 10em;
+  }
+  .card:hover{
+    transition: transform 0.6s;
+    transform: scale(1.06);
+  }
+  
+  .card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    overflow: hidden; 
+    word-wrap: break-word; 
+  }
+  
+  .card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    overflow: hidden; 
+    word-wrap: break-word; 
+  }
+  
+  .card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+    border-radius: 10px; 
+    margin-top: 10px; 
+  }
+
+
+
+
 .filtro {
-    display: flex; /* Utilizamos flexbox para alinear los elementos horizontalmente */
-    align-items: center; /* Centramos verticalmente los elementos */
+    display: flex;
+    align-items: center; 
+    padding: 1em;
+    width: 60%;
 }
 
 .filtro input[type="text"] {
-    margin-right: 10px; /* Espacio entre los campos de entrada */
-    padding: 8px; /* Ajusta el relleno según sea necesario */
+    margin-right: 10px; 
+    padding: 8px; 
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 .filtro button {
-    padding: 8px 16px; /* Ajusta el relleno según sea necesario */
+    padding: 8px 16px; 
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
+}
+
+
+
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#5f0f40 ;
+    color: white;
+}
+footer p {
+    display: contents;
+    font-size: 1.2rem;
+}
+.redes{
+    display: flex;
+    width: 10rem;
+    gap: 1em;
+    padding: 1em;
+}
+.redes a{
+    text-decoration: none;
+    color: white;   
+}
+.redes a:hover{
+    cursor: pointer;
+    animation: girar 1s linear forwards; /* Aplica la animación */
+}
+@keyframes girar {
+    0% {
+        transform: translateY(0) rotate(0deg); /* Estado inicial */
+    }
+    50% {
+        transform: translateY(-0.8em) rotate(-180deg); /* Mitad de la animación */
+    }
+    100% {
+        transform: translateY(0) rotate(-360deg); /* Estado final */
+    }
 }
 /*Colores
 5f0f40
