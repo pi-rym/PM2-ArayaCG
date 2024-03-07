@@ -76,7 +76,7 @@ function crearTarjeta(film) {
 
     // Crea un elemento de tarjeta y lo configura con el título y el póster de la película
     const filmCard = document.createElement("div");
-    filmCard.classList.add("card");
+    filmCard.classList.add("cardCss");
     filmCard.innerHTML = `
         <img src="${poster}">
         <h2>${title}</h2>

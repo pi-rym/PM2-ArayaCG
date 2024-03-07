@@ -57,7 +57,7 @@ ion-icon {
     transform: scale(1.1);
 }
 
-.nav{
+.navPag{
     background-color: #0f4c5c;
     color: white;
     display: flex;
@@ -66,7 +66,7 @@ ion-icon {
     align-items: center;
     width: 100%;
 }
-.nav a{
+.navPag a{
     text-decoration: none;
     color: white;
 }
@@ -143,7 +143,7 @@ ion-icon {
     justify-content: center;
 }
 
-.card {
+.cardCss {
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -152,26 +152,26 @@ ion-icon {
     cursor: pointer;
     width: 10em;
   }
-  .card:hover{
+  .cardCss:hover{
     transition: transform 0.6s;
     transform: scale(1.06);
   }
   
-  .card h2 {
+  .cardCss h2 {
     font-size: 24px;
     margin-bottom: 10px;
     overflow: hidden; 
     word-wrap: break-word; 
   }
   
-  .card h3 {
+  .cardCss h3 {
     font-size: 18px;
     margin-bottom: 8px;
     overflow: hidden; 
     word-wrap: break-word; 
   }
   
-  .card img {
+  .cardCss img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
@@ -180,7 +180,12 @@ ion-icon {
     margin-top: 10px; 
   }
 
-
+section{
+    padding: 1em;
+}
+article{
+    padding: 1em;
+}
 
 
 .filtro {
@@ -205,8 +210,25 @@ ion-icon {
     cursor: pointer;
 }
 
+.carousel-container {
+    width: 100%; 
+    max-height: 60em; 
+    
+}
 
+.carousel-item img {
+    width: 60em; 
+    height: 60em; 
+    object-fit: contain; 
+}
+.carousel-control-prev span,
+.carousel-control-next span{
+    background-color:#0f4c5c; 
+    width: 6em;
+    height: 6em;
+}
 
+  
 
 footer{
     display: flex;
@@ -214,6 +236,7 @@ footer{
     align-items: center;
     background-color:#5f0f40 ;
     color: white;
+    padding: 1em;
 }
 footer p {
     display: contents;
@@ -227,11 +250,14 @@ footer p {
 }
 .redes a{
     text-decoration: none;
-    color: white;   
+    color: white; 
 }
 .redes a:hover{
     cursor: pointer;
     animation: girar 1s linear forwards; /* Aplica la animación */
+}
+.redes a ion-icon{
+    width: 1em;
 }
 @keyframes girar {
     0% {
@@ -244,6 +270,7 @@ footer p {
         transform: translateY(0) rotate(-360deg); /* Estado final */
     }
 }
+
 /*Colores
 5f0f40
 9a031e
