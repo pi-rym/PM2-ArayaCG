@@ -34,7 +34,7 @@ function crearTarjeta(film) {
     `;
 
     // Agrega un evento para mostrar los detalles al hacer clic en la tarjeta
-    filmCard.addEventListener('click', () => mostrarDetalles(film));
+    filmCard.addEventListener("click", () => mostrarDetalles(film));
 
     return filmCard;
 }
@@ -51,5 +51,5 @@ function instanciarContendor(films) {
         mostrarDetalles(films[0]);
     }
 }
-
+//Se exportan las 3 funciones creadas
 module.exports = { mostrarDetalles, crearTarjeta, instanciarContendor };
