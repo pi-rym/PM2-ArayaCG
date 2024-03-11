@@ -16,11 +16,10 @@ class CarritoCompra {
         return suma;
     }
     aplicarDescuento(porcentaje) {
-        if (porcentaje >= 100 || porcentaje <= 0) {
+        if (porcentaje > 0 && porcentaje < 100) {
             return this.calcularTotal();
         }
-        let descuento = this.calcularTotal() * (porcentaje * (1 / 100));
-        return this.calcularTotal() - descuento;
+        return this.calcularTotal() - this.calcularTotal() * (porcentaje * (1 / 100));
     }
 }
 
