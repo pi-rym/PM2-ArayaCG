@@ -3,10 +3,10 @@ class CarritoCompra {
         this.carrito = [];
     }
     agregarProducto({ nombre, value }) {
-        if(nombre.length > 0 && value > 0){
+        if (nombre.length > 0 && value > 0) {
             this.carrito.push(new Producto(nombre, value));
         }
-        return ("producto no valido")
+        return "producto no valido";
     }
     calcularTotal() {
         let suma = 0;
@@ -16,7 +16,7 @@ class CarritoCompra {
         return suma;
     }
     aplicarDescuento(porcentaje) {
-        if(porcentaje >= 100 || porcentaje <= 0){
+        if (porcentaje >= 100 || porcentaje <= 0) {
             return this.calcularTotal();
         }
         let descuento = this.calcularTotal() * (porcentaje * (1 / 100));
