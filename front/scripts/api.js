@@ -5,7 +5,9 @@ const axios = require("axios");
 async function llenarRepositorioDesdeAPI() {
     const repository = new Repository();
     try {
-        data = await axios.get("https://students-api.2.us-1.fl0.io/movies").data;
+        const respuesta = await axios.get("https://students-api.2.us-1.fl0.io/movies");
+        const data = respuesta.data;
+
         data.forEach(({ title, year, director, duration, genre, rate, poster }) => {
             repository.createFilm(title, year, director, duration, genre, rate, poster);
         });
@@ -13,6 +15,16 @@ async function llenarRepositorioDesdeAPI() {
         require("./tarjetas.js").instanciarContendor(repository.getAllFilms());
     } catch (error) {
         console.error(error);
+        // En caso de error, mostramos el mensaje en el HTML
+        let poster = "/front/assets/img/gif.gif";
+        document.getElementById("errorMensaje").innerHTML = `
+        <div class="detalleCard" style="height: 40vh;">
+            <img src="${poster}"style="height: 100%;">
+            <div class="detalleInfo" >
+                <h2>Error al conectarse con la API</h2>
+            </div>
+        </div>
+    `;
     }
 }
 //se exporta la función

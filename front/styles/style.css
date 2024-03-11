@@ -3,6 +3,12 @@
 }
 body {
     font-family: "Sansita", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main {
+    flex: 1;
 }
 .sansita-black {
     font-family: "Sansita", sans-serif;
@@ -259,7 +265,6 @@ footer p {
         transform: translateY(0) rotate(-360deg); /* Estado final */
     }
 }
-
 /*Colores
 5f0f40
 9a031e
