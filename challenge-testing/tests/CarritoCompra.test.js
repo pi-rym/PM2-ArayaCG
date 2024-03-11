@@ -23,15 +23,15 @@ describe("CarritoCompra", () => {
     //agregar producto que tenga valor negativo
     test("agregarProducto que tenga valor negativo", () => {
         prueba.agregarProducto({ nombre: "Pan", value: -50 });
-        expect(prueba.carrito.length).toBe(1);
+        expect(prueba.carrito.length).toBe(0);
     });
-    //calcularTotal(): 
+    //calcularTotal():
     test("Calcula el total de la compra sumando los precios de todos los productos en el carrito", () => {
         prueba.agregarProducto({ nombre: "Leche", value: 100 });
         prueba.agregarProducto({ nombre: "Pan", value: 50 });
         expect(prueba.calcularTotal()).toBe(150);
     });
-    //aplicarDescuento(porcentaje): 
+    //aplicarDescuento(porcentaje):
     test("Aplica un descuento al total de la compra según el porcentaje especificado", () => {
         prueba.agregarProducto({ nombre: "Leche", value: 100 });
         prueba.agregarProducto({ nombre: "Pan", value: 50 });

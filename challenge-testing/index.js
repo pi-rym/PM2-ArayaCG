@@ -4,7 +4,7 @@ class CarritoCompra {
     }
     agregarProducto({ nombre, value }) {
         if (nombre.length > 0 && value > 0) {
-            this.carrito.push(new Producto(nombre, value));
+            this.carrito.push({ nombre, value });
         }
         return "producto no valido";
     }
@@ -21,13 +21,6 @@ class CarritoCompra {
         }
         let descuento = this.calcularTotal() * (porcentaje * (1 / 100));
         return this.calcularTotal() - descuento;
-    }
-}
-
-class Producto {
-    constructor(nombre, value) {
-        this.nombre = nombre;
-        this.value = value;
     }
 }
 
