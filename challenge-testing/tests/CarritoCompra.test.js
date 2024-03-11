@@ -13,12 +13,14 @@ describe("CarritoCompra", () => {
     });
     //agregarProducto(producto): .
     test("Agrega un objeto representando un producto al carrito", () => {
-        prueba.agregarProducto({ nombre: "Leche", value: 100 });
+        prueba.agregarProducto({ nombre: "Leche", value: 100, cantidad: 2 });
         expect(prueba.carrito.length).toBe(1);
         expect(typeof prueba.carrito[0].nombre).toBe("string");
         expect(typeof prueba.carrito[0].value).toBe("number");
+        expect(typeof prueba.carrito[0].cantidad).toBe("number");
         expect(prueba.carrito[0].nombre).toBe("Leche");
         expect(prueba.carrito[0].value).toBe(100);
+        expect(prueba.carrito[0].cantidad).toBe(2);
     });
     //agregar producto que tenga valor negativo
     test("agregarProducto que tenga valor negativo", () => {
@@ -27,15 +29,15 @@ describe("CarritoCompra", () => {
     });
     //calcularTotal():
     test("Calcula el total de la compra sumando los precios de todos los productos en el carrito", () => {
-        prueba.agregarProducto({ nombre: "Leche", value: 100 });
-        prueba.agregarProducto({ nombre: "Pan", value: 50 });
-        expect(prueba.calcularTotal()).toBe(150);
+        prueba.agregarProducto({ nombre: "Leche", value: 100, cantidad: 1 });
+        prueba.agregarProducto({ nombre: "Pan", value: 50, cantidad: 2 });
+        expect(prueba.calcularTotal()).toBe(200);
     });
     //aplicarDescuento(porcentaje):
     test("Aplica un descuento al total de la compra según el porcentaje especificado", () => {
-        prueba.agregarProducto({ nombre: "Leche", value: 100 });
-        prueba.agregarProducto({ nombre: "Pan", value: 50 });
-        expect(prueba.aplicarDescuento(10)).toBe(135);
+        prueba.agregarProducto({ nombre: "Leche", value: 100, cantidad: 1 });
+        prueba.agregarProducto({ nombre: "Pan", value: 50, cantidad: 2 });
+        expect(prueba.aplicarDescuento(10)).toBe(180);
         expect(prueba.aplicarDescuento(110)).toBe(prueba.calcularTotal());
         expect(prueba.aplicarDescuento(-10)).toBe(prueba.calcularTotal());
     });
