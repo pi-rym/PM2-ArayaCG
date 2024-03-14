@@ -5,7 +5,7 @@ const axios = require("axios");
 async function llenarRepositorioDesdeAPI() {
     const repository = new Repository();
     try {
-        const respuesta = await axios.get("https://students-api.up.railway.app/movies");
+        const respuesta = await axios.get("http://localhost:3000/movies");
         const data = respuesta.data;
 
         data.forEach(({ title, year, director, duration, genre, rate, poster }) => {
