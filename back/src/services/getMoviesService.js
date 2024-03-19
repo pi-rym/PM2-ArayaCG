@@ -2,11 +2,12 @@ require("dotenv").config();
 const { URL } = process.env;
 
 const axios = require("axios");
+const Movie = require("../models/Movie")
 
 const moviesService = async () => {
     try {
-        const respuesta = await axios(URL);
-        return respuesta.data;
+        const movies = await Movie.find();
+        return movies;
     } catch (error) {
         console.log(error.message);
     }
