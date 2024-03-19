@@ -1,7 +1,10 @@
+require("dotenv").config();
+const { MOVIES_DB } = process.env;
+
 const mongoose = require("mongoose");
 const dbCon = async () => {
     //conexión base de datos
-    await mongoose.connect("mongodb+srv://Gabriel:dAngf2aTNdj0Mepr@mycluster.oafookj.mongodb.net/Movies?retryWrites=true&w=majority&appName=myCluster");
+    await mongoose.connect(MOVIES_DB);
 };
 
 module.exports = dbCon;
