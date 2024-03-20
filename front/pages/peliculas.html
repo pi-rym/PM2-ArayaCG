@@ -17,19 +17,76 @@
                     <p class="sansita-black">Cine Ticket</p>
                 </div>
                 <div class="paginas">
-                    <a href="/front/index.html">Inicio</a> | <a href="#">Películas</a> |
+                    <a href="/front/index.html">Inicio</a> | 
+                    <a href="#">Películas</a> |
                     <a href="/front/pages/historiaCine.html">Historia del Cine</a> |
                     <a href="/front/pages/sobreMi.html">Sobre Mi</a>
                 </div>
-                <button class="login"><ion-icon name="person-outline"></ion-icon></button>
+                <div class="logo">
+                    <ion-icon name="ticket-outline"></ion-icon>
+                </div>
             </div>
         </header>
         <main>
             <div class="isologo">
                 <div class="contenido">
-                    <h1 class="sansita-black titulo">Películas</h1>
+                    <h1 class="sansita-black titulo">Agrega tu película!</h1>
                 </div>
             </div>
+            <section class="formulario">
+                <form id="formularioPelicula">
+                    <div class="formProp">
+                        <label for="titulo">Nombre:</label>
+                        <input type="text" id="titulo" name="titulo" required />
+                    </div>
+                    <div class="formProp">
+                        <label for="anio">Año:</label>
+                        <input type="number" id="anio" name="anio" min="1900" max="2099" required />
+                    </div>
+                    <div class="formProp">
+                        <label for="director">Director:</label>
+                        <input type="text" id="director" name="director" required />
+                    </div>
+                    <div class="formProp">
+                        <label for="duracion">Duración (minutos):</label>
+                        <input type="number" id="duracion" name="duracion" min="1" required />
+                    </div>
+                    <div class="formProp">
+                        <label for="genero">Género:</label><br />
+                        <input
+                            type="text"
+                            id="genero"
+                            name="genero"
+                            placeholder="(Si tiene más de un género recuerda separarlos con comas)"
+                            required
+                        />
+                    </div>
+                    <div class="formProp">
+                        <label for="clasificacion">Clasificación:</label>
+                        <input type="number" id="clasificacion" name="clasificacion" min="1" max="5" required />
+                    </div>
+                    <div class="formProp">
+                        <label for="poster">URL del Poster:</label>
+                        <input type="url" id="poster" name="poster" required />
+                    </div>
+                    <div class="envioLimpieza">
+                        <button type="button" onclick="limpiarCampos()">Limpiar</button>
+                        <button type="submit">Enviar</button>
+                    </div>
+                </form>
+            </section>
+            <section>
+                <div class="isologo">
+                    <div class="contenido">
+                        <h1 class="sansita-black titulo">Películas ya creadas</h1>
+                    </div>
+                </div>
+                <div id="lista">
+                    <ul class="lista-peliculas">
+                        
+                    </ul>
+                </div>
+            </section>
         </main>
 
         <footer>
@@ -44,5 +101,7 @@
 
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script src="./public/bundle.js"></script>
+        <script src="../scripts/formulario.js"></script>
     </body>
 </html>

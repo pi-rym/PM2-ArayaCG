@@ -1,6 +1,7 @@
 //se llama al objeto Repository
 const { Repository } = require("./objetos.js");
 const axios = require("axios");
+const {instanciarContendor} = require("./tarjetas.js") 
 
 async function llenarRepositorioDesdeAPI() {
     const repository = new Repository();
@@ -12,7 +13,7 @@ async function llenarRepositorioDesdeAPI() {
             repository.createFilm(title, year, director, duration, genre, rate, poster);
         });
         // Una vez que se llenan los datos desde la API, llamamos a la función para actualizar las tarjetas
-        require("./tarjetas.js").instanciarContendor(repository.getAllFilms());
+        instanciarContendor(repository.getAllFilms());
     } catch (error) {
         console.error(error);
         // En caso de error, mostramos el mensaje en el HTML

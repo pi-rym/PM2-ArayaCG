@@ -44,21 +44,14 @@ ion-icon {
 }
 .paginas a:hover {
     transition: transform 0.6s ease;
-    transform: scale(1.2);
+    transform: scale(1.2) ;
 }
-.login {
-    display: flex;
-    align-items: center;
-    border-radius: 5px;
-    width: 10rem;
+.logo ion-icon{
     margin: 1em;
-    cursor: pointer;
 }
-.login:hover {
-    background-color: black;
-    color: white;
+.logo ion-icon:hover{
     transition: transform 0.6s ease;
-    transform: scale(1.1);
+    transform: scale(0.8) rotate(360deg);
 }
 
 .navPag {
@@ -80,8 +73,8 @@ ion-icon {
     color: #fb8b24;
     display: flex;
     justify-content: center;
-    height: 9em;
     margin-bottom: 20px;
+    padding: 0.6em 0;
 }
 
 .contenido {
@@ -91,7 +84,6 @@ ion-icon {
 }
 .titulo {
     font-size: 3em;
-    width: 7em;
     display: flex;
     align-items: center;
     text-align: left;
@@ -180,11 +172,9 @@ ion-icon {
     margin-top: 10px;
 }
 
-section {
+.articleYo {
     padding: 1em;
-}
-article {
-    padding: 1em;
+    display: flex;
 }
 
 .filtro {
@@ -232,6 +222,8 @@ footer {
     align-items: center;
     background-color: #5f0f40;
     color: white;
+    margin-top: 1em;
+    padding-top: 0.6em;
 }
 footer p {
     display: contents;
@@ -247,6 +239,7 @@ footer p {
     text-decoration: none;
     color: white;
 }
+
 .redes a:hover {
     cursor: pointer;
     animation: girar 1s linear forwards; /* Aplica la animación */
@@ -256,14 +249,62 @@ footer p {
 }
 @keyframes girar {
     0% {
-        transform: translateY(0) rotate(0deg); /* Estado inicial */
+        transform: translateY(0) rotate(0deg); 
     }
     50% {
-        transform: translateY(-0.8em) rotate(-180deg); /* Mitad de la animación */
+        transform: translateY(-0.8em) rotate(-180deg); 
     }
     100% {
-        transform: translateY(0) rotate(-360deg); /* Estado final */
+        transform: translateY(0) rotate(-360deg);
     }
+}
+.formulario {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1em;
+}
+#formularioPelicula {
+    width: 60%;
+    font-size: 1.2em;
+    padding: 0 2em  ;
+    border: 0.4em groove #5f0f40;
+    background-color: #fb8c2459;
+}
+.formProp {
+    display: flex;
+    width: 100%;
+    height: 2em;
+    margin: 1em;
+    align-items: center;
+}
+.formProp label {
+    width: 10em;
+}
+.formProp input {
+    width: 100%;
+    font-size: 1.2em;
+    height: 1.9em;
+}
+.envioLimpieza{
+    display: flex;  
+    justify-content: space-evenly;
+}
+
+.envioLimpieza button {
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    width: 10em;
+    font-size: 1.2em;
+    margin: 1em;
+    cursor: pointer;
+}
+.envioLimpieza button:hover {
+    background-color: black;
+    color: white;
+    transition: transform 0.6s ease;
+    transform: scale(1.1);
 }
 /*Colores
 5f0f40
