@@ -1,11 +1,14 @@
+const path = require('path');
+
 module.exports = {
-    //por donde entra el webpack
-    entry: "./scripts/index.js",
-    //donde guardar
-    output: {
-        //Nombre carpeta
-        path: __dirname + "/public",
-        //Nombre del archivo
-        filename: "bundle.js",
+    entry: {
+        index: "./scripts/index.js",
+        btnLimpiarForm: "./scripts/limpiarFormulario.js",
+        btnEnviarForm: "./scripts/enviarFormulario.js",
     },
+    output: {
+        path: path.resolve(__dirname, 'public'),
+        filename: '[name].bundle.js',
+    },
+    mode: 'development'
 };

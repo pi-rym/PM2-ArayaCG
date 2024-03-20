@@ -1,12 +1,21 @@
-const movieService = require("../services/getMoviesService");
+const { getMoviesService, createMovieService } = require("../services/moviesService");
 
-const movieController = async (req, res) => {
+const getMovieController = async (req, res) => {
     try {
-        const movies = await movieService();
+        const movies = await getMoviesService();
         res.status(200).json(movies);
     } catch (error) {
         res.status(500).json({ error: error.mesagge });
     }
 };
+const createMovieController = async (req, res) => {
+    try {
+        const { title, year, director, duration, genre, rate, poster } = req.body;
+        const newMovie = await createMovieService({ title, year, director, duration, genre, rate, poster });
+        res.status(201).json(newMovie);
+    } catch (error) {
+        res.status(500).json({ error: error.mesagge });
+    }
+};
 
-module.exports = movieController;
+module.exports = { getMovieController, createMovieController };
