@@ -22,7 +22,7 @@ async function llenarRepositorioDesdeAPI() {
         <div class="detalleCard" style="height: 40vh;">
             <img src="${poster}"style="height: 100%;">
             <div class="detalleInfo" >
-                <h2>Error al conectarse con la API</h2>
+                <h2>Error al conectarse con la Base de Datos</h2>
             </div>
         </div>
     `;

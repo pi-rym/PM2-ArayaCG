@@ -8,8 +8,20 @@ async function listaPeli() {
         const data = respuesta.data;
 
         const titles = data.map((movie) => movie.title);
-
-        titles.sort();
+        
+        titles.sort((a, b) => {
+            const titleA = a.toLowerCase();
+            const titleB = b.toLowerCase();
+        
+            if (titleA < titleB) {
+                return -1;
+            }
+            if (titleA > titleB) {
+                return 1;
+            }
+            return 0;
+        });
+        
         titles.forEach((title) => {
             repository.createFilm(title);
         });
@@ -28,7 +40,7 @@ async function listaPeli() {
         <div class="detalleCard" style="height: 40vh;">
             <img src="${poster}"style="height: 100%;">
             <div class="detalleInfo" >
-                <h2>Error al conectarse con la API</h2>
+                <h2>Error al conectarse con la Base de Datos</h2>
             </div>
         </div>
     `;
