@@ -15,7 +15,7 @@
   \**************************************/
 /***/ ((module) => {
 
-eval("function limpiarCampos() {\r\n    document.getElementById(\"formularioPelicula\").reset();\r\n}\r\n\r\n\r\ndocument.getElementById(\"limpiarBtn\").addEventListener(\"click\", limpiarCampos);\r\n\r\nmodule.exports = limpiarCampos;\n\n//# sourceURL=webpack://front/./scripts/limpiarFormulario.js?");
+eval("function limpiarCampos() {\r\n    document.getElementById(\"formularioPelicula\").reset();\r\n}\r\n\r\ndocument.getElementById(\"limpiarBtn\").addEventListener(\"click\", limpiarCampos);\r\n\r\nmodule.exports = limpiarCampos;\r\n\n\n//# sourceURL=webpack://front/./scripts/limpiarFormulario.js?");
 
 /***/ })
 
