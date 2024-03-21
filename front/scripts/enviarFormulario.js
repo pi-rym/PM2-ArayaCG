@@ -1,4 +1,5 @@
 const axios = require("axios");
+const limpiarCampos = require("./limpiarFormulario");
 
 function enviarPelicula() {
     const title = document.getElementById("titulo").value;
@@ -33,6 +34,7 @@ function enviarPelicula() {
         poster,
     });
     alert("Película creada!");
+    limpiarCampos();
 }
 
 document.getElementById("enviarBtn").addEventListener("click", enviarPelicula);

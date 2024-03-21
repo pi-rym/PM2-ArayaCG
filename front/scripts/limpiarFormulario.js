@@ -3,3 +3,5 @@ function limpiarCampos() {
 }
 
 document.getElementById("limpiarBtn").addEventListener("click", limpiarCampos);
+
+module.exports = limpiarCampos;
