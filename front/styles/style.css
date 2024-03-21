@@ -44,12 +44,12 @@ ion-icon {
 }
 .paginas a:hover {
     transition: transform 0.6s ease;
-    transform: scale(1.2) ;
+    transform: scale(1.2);
 }
-.logo ion-icon{
+.logo ion-icon {
     margin: 1em;
 }
-.logo ion-icon:hover{
+.logo ion-icon:hover {
     transition: transform 0.6s ease;
     transform: scale(0.8) rotate(360deg);
 }
@@ -134,6 +134,7 @@ ion-icon {
     gap: 1em;
     justify-content: center;
     flex-wrap: wrap;
+    padding-top: 2em;
 }
 
 .cardCss {
@@ -173,7 +174,7 @@ ion-icon {
     margin-top: 10px;
 }
 
-.articleYo {
+.articleCustom {
     padding: 1em;
     display: flex;
 }
@@ -250,10 +251,10 @@ footer p {
 }
 @keyframes girar {
     0% {
-        transform: translateY(0) rotate(0deg); 
+        transform: translateY(0) rotate(0deg);
     }
     50% {
-        transform: translateY(-0.8em) rotate(-180deg); 
+        transform: translateY(-0.8em) rotate(-180deg);
     }
     100% {
         transform: translateY(0) rotate(-360deg);
@@ -268,7 +269,7 @@ footer p {
 #formularioPelicula {
     width: 60%;
     font-size: 1.2em;
-    padding: 0 2em  ;
+    padding: 0 2em;
     border: 0.4em groove #5f0f40;
     background-color: #fb8c2459;
 }
@@ -287,8 +288,8 @@ footer p {
     font-size: 1.1em;
     height: 1.9em;
 }
-.envioLimpieza{
-    display: flex;  
+.envioLimpieza {
+    display: flex;
     justify-content: space-evenly;
 }
 
@@ -304,6 +305,27 @@ footer p {
 .envioLimpieza button:hover {
     background-color: black;
     color: white;
+    transition: transform 0.6s ease;
+    transform: scale(1.1);
+}
+#lista {
+    display: flex;
+    justify-content: center;
+}
+#listaPeliculas {
+    font-size: 1.2em;
+    width: fit-content;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 1em;
+    border: 0.4em groove #5f0f40;
+    background-color: #fb8c2459;
+}
+#listaPeliculas li {
+    text-decoration: dashed;
+}
+#listaPeliculas li:hover {
     transition: transform 0.6s ease;
     transform: scale(1.1);
 }

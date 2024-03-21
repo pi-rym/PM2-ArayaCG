@@ -1,7 +1,7 @@
 //se llama al objeto Repository
 const { Repository } = require("./objetos.js");
 const axios = require("axios");
-const {instanciarContendor} = require("./tarjetas.js") 
+const { instanciarContendor } = require("./tarjetas.js");
 
 async function llenarRepositorioDesdeAPI() {
     const repository = new Repository();

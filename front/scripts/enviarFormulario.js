@@ -1,4 +1,4 @@
-const axios = require("axios")
+const axios = require("axios");
 
 function enviarPelicula() {
     const title = document.getElementById("titulo").value;
@@ -24,13 +24,13 @@ function enviarPelicula() {
     }
 
     axios.post("http://localhost:3000/movies", {
-      title,
-      year,
-      director,
-      duration,
-      genre,
-      rate,
-      poster,
+        title,
+        year,
+        director,
+        duration,
+        genre,
+        rate,
+        poster,
     });
     alert("Película creada!");
 }
