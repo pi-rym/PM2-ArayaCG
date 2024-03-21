@@ -8,7 +8,7 @@ function enviarPelicula() {
     const duration = document.getElementById("duracion").value;
     const generoString = document.getElementById("genero").value;
     const genre = generoString.split(",").map((gen) => gen.trim());
-    const rate = parseFloat(document.getElementById("clasificacion").value);
+    const rate = parseFloat(document.getElementById("calificacion").value);
     const poster = document.getElementById("poster").value;
 
     if (!title || !year || !director || !duration || !generoString || !rate || !poster) {
@@ -17,6 +17,10 @@ function enviarPelicula() {
     }
     if (isNaN(year)) {
         alert("Por favor ingresa valores numéricos válidos para el año ");
+        return;
+    }
+    if (year < 1890 || year > 2100) {
+        alert("Has puesto un año incorrecto");
         return;
     }
     if (parseInt(rate) < 1 || parseInt(rate) > 5) {

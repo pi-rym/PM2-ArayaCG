@@ -29,8 +29,10 @@ function crearTarjeta(film) {
     const filmCard = document.createElement("div");
     filmCard.classList.add("cardCss");
     filmCard.innerHTML = `
-        <img src="${poster}">
-        <h2>${title}</h2>
+        <a href="#detallesPelicula" style="text-decoration: none; color: black;">
+            <img src="${poster}">
+            <h2>${title}</h2>
+        </a>
     `;
 
     // Agrega un evento para mostrar los detalles al hacer clic en la tarjeta

@@ -36,19 +36,19 @@
                 <form id="formularioPelicula">
                     <div class="formProp">
                         <label for="titulo">Nombre:</label>
-                        <input type="text" id="titulo" name="titulo" required />
+                        <input type="text" id="titulo" name="titulo" placeholder="La pelicula que quieras agregar" required />
                     </div>
                     <div class="formProp">
                         <label for="anio">Año:</label>
-                        <input type="number" id="anio" name="anio" min="1900" max="2099" required />
+                        <input type="number" id="anio" name="anio" min="1900" max="2099" placeholder="Ej: 1996" required />
                     </div>
                     <div class="formProp">
                         <label for="director">Director:</label>
-                        <input type="text" id="director" name="director" required />
+                        <input type="text" id="director" name="director" placeholder="Ej: James Gunn" required />
                     </div>
                     <div class="formProp">
                         <label for="duracion">Duración:</label>
-                        <input type="text" id="duracion" name="duracion" min="1" required />
+                        <input type="text" id="duracion" name="duracion" min="1" required  placeholder="Ej: 1 horas 46 minutos"/>
                     </div>
                     <div class="formProp">
                         <label for="genero">Género:</label><br />
@@ -61,12 +61,12 @@
                         />
                     </div>
                     <div class="formProp">
-                        <label for="clasificacion">Clasificación:</label>
-                        <input type="number" id="clasificacion" name="clasificacion" min="1" max="5" required />
+                        <label for="calificacion">Calificación:</label>
+                        <input type="number" id="calificacion" name="calificacion" min="1" max="5" placeholder="Del 1 al 5" required />
                     </div>
                     <div class="formProp">
                         <label for="poster">URL del Poster:</label>
-                        <input type="url" id="poster" name="poster" required />
+                        <input type="url" id="poster" name="poster" placeholder="www.ejemplo.com/image.jpg" required />
                     </div>
                     <div class="envioLimpieza">
                         <button id="limpiarBtn" type="button">Limpiar</button>
